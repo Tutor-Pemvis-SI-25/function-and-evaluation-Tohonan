@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="TLAST"/>
+        <attribute name="authors" value="Asus"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-11-18 09:16:09 PM"/>
+        <attribute name="created" value="QXN1cztFTU9USU9OTEVTUzsyMDI1LTExLTE4OzA4OjM2OjQ5IFBNOzI1NTY="/>
+        <attribute name="edited" value="QXN1cztFTU9USU9OTEVTUzsyMDI1LTExLTE4OzA4OjM3OjE0IFBNOzE7QXN1cztFTU9USU9OTEVTUzsyMDI1LTExLTE4OzA4OjE3OjUwIFBNOzUyNjM="/>
+        <attribute name="edited" value="QXN1cztFTU9USU9OTEVTUzsyMDI1LTExLTE4OzA5OjE2OjA5IFBNOzE7MjY1OQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body/>
+    </function>
+    <function name="Prio" type="Real" variable="prioritas">
+        <parameters>
+            <parameter name="Tingkatkesulitan" type="Real" array="False"/>
+            <parameter name="hariHinggaDeadline" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="prioritas" type="Real" array="False" size=""/>
+            <declare name="prio" type="String" array="False" size=""/>
+            <input variable="Tingkatkesulitan"/>
+            <input variable="hariHinggaDeadline"/>
+            <assign variable="prioritas" expression="TingkatKesulitan * (1.0 / hariHinggaDeadline)"/>
+            <if expression="Prioritas &gt; 3">
+                <then>
+                    <assign variable="prio" expression="&quot;Penting! Anda harus mengerjakan tugas ini segera&quot;"/>
+                </then>
+                <else>
+                    <if expression="Prioritas &lt;= 3 &amp;&amp; Prioritas &gt;= 1.5">
+                        <then>
+                            <assign variable="prio" expression="&quot;Tugas ini memiliki prioritas menengah&quot;"/>
+                        </then>
+                        <else>
+                            <if expression="Prioritas &gt; 1.5">
+                                <then>
+                                    <assign variable="prio" expression="&quot;Tugas ini relatif ringan, namun jangan tunda terlalu lama&quot;"/>
+                                </then>
+                                <else/>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <output expression="prio" newline="True"/>
+        </body>
+    </function>
+    <function name="Task" type="String" variable="H">
+        <parameters>
+            <parameter name="Add" type="String" array="True"/>
+        </parameters>
+        <body>
+            <declare name="H" type="String" array="False" size=""/>
+        </body>
+    </function>
+</flowgorithm>
