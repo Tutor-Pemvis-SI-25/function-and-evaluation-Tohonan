@@ -1,15 +1,14 @@
 <?xml version="1.0"?>
 <flowgorithm fileversion="4.2">
     <attributes>
-        <attribute name="name" value="TLAST"/>
-        <attribute name="authors" value="Asus"/>
+        <attribute name="name" value="tutor  18 november"/>
+        <attribute name="authors" value="ASUS"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2025-11-21 09:48:58 AM"/>
-        <attribute name="created" value="QXN1cztFTU9USU9OTEVTUzsyMDI1LTExLTE4OzA4OjM2OjQ5IFBNOzI1NTY="/>
-        <attribute name="edited" value="QXN1cztFTU9USU9OTEVTUzsyMDI1LTExLTE4OzA4OjM3OjE0IFBNOzE7QXN1cztFTU9USU9OTEVTUzsyMDI1LTExLTE4OzA4OjE3OjUwIFBNOzUyNjM="/>
-        <attribute name="edited" value="QXN1cztFTU9USU9OTEVTUzsyMDI1LTExLTIxOzA4OjIxOjExIEFNOzE7QXN1cztFTU9USU9OTEVTUzsyMDI1LTExLTE4OzA4OjM2OjQ5IFBNOzUyNDE="/>
-        <attribute name="edited" value="QXN1cztFTU9USU9OTEVTUzsyMDI1LTExLTIxOzA5OjQ4OjQyIEFNOzU7Ym9hc2g7SFVUQUhBRUFOOzIwMjUtMTEtMjE7MDguMTUuMjcgQU07VExBU1RbMV0uZnByZzs2Mjg2"/>
-        <attribute name="edited" value="QXN1cztFTU9USU9OTEVTUzsyMDI1LTExLTIxOzA5OjQ4OjU4IEFNOzI7MjY0OA=="/>
+        <attribute name="saved" value="2025-11-22 07:59:58 AM"/>
+        <attribute name="created" value="QVNVUztMQVBUT1AtVkJQSEVHNE87MjAyNS0xMS0xODswOC4yNS4yNiBQTTsyNjYz"/>
+        <attribute name="edited" value="QVNVUztMQVBUT1AtVkJQSEVHNE87MjAyNS0xMS0yMTswOC4zMS4xMiBBTTs2O2p1bGl1O0tBSVNBUjsyMDIzLTExLTIxOzA4OjUwOjM2IFBNO0UwNFsxXS5mcHJnOzYwMTg="/>
+        <attribute name="edited" value="QVNVUztMQVBUT1AtVkJQSEVHNE87MjAyNS0xMS0yMTswOC4zNC4xMyBBTTsyOzI3NDc="/>
+        <attribute name="edited" value="QXN1cztFTU9USU9OTEVTUzsyMDI1LTExLTIyOzA3OjU5OjU4IEFNOzE7MjY0OA=="/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
@@ -62,6 +61,15 @@
             <parameter name="kodematkul" type="String" array="True"/>
             <parameter name="matkul" type="String" array="True"/>
             <parameter name="dosen" type="String" array="True"/>
+            <parameter name="deadline" type="String" array="True"/>
+            <parameter name="nimnama" type="String" array="True"/>
+            <parameter name="tingkatkesulitan" type="Real" array="True"/>
+            <parameter name="harihinggadeadline" type="Integer" array="True"/>
+            <parameter name="status" type="String" array="True"/>
+            <parameter name="prioritas" type="Real" array="True"/>
+            <parameter name="teks" type="String" array="True"/>
+            <parameter name="i" type="Integer" array="False"/>
+            <parameter name="n" type="Integer" array="False"/>
         </parameters>
         <body>
             <input variable="deskripsitugas[i]"/>
@@ -99,7 +107,7 @@
             <assign variable="n" expression="n + 1"/>
         </body>
     </function>
-    <function name="descending" type="String" variable="H">
+    <function name="descending" type="None" variable="">
         <parameters>
             <parameter name="deskripsitugas" type="String" array="True"/>
             <parameter name="kodematkul" type="String" array="True"/>
@@ -164,6 +172,37 @@
             </for>
         </body>
     </function>
+    <function name="inisialisasi" type="None" variable="">
+        <parameters>
+            <parameter name="deskripsitugas" type="String" array="True"/>
+            <parameter name="kodematkul" type="String" array="True"/>
+            <parameter name="matkul" type="String" array="True"/>
+            <parameter name="dosen" type="String" array="True"/>
+            <parameter name="deadline" type="String" array="True"/>
+            <parameter name="nimnama" type="String" array="True"/>
+            <parameter name="tingkatkesulitan" type="Real" array="True"/>
+            <parameter name="harihinggadeadline" type="Integer" array="True"/>
+            <parameter name="status" type="String" array="True"/>
+            <parameter name="prioritas" type="Real" array="True"/>
+            <parameter name="teks" type="String" array="True"/>
+        </parameters>
+        <body>
+            <declare name="a" type="Integer" array="False" size=""/>
+            <for variable="a" start="0" end="9" direction="inc" step="1">
+                <assign variable="deskripsitugas[a]" expression="&quot;&quot;"/>
+                <assign variable="kodematkul[a]" expression="&quot;&quot;"/>
+                <assign variable="matkul[a]" expression="&quot;&quot;"/>
+                <assign variable="dosen[a]" expression="&quot;&quot;"/>
+                <assign variable="deadline[a]" expression="&quot;&quot;"/>
+                <assign variable="nimnama[a]" expression="&quot;&quot;"/>
+                <assign variable="tingkatkesulitan[a]" expression="0"/>
+                <assign variable="harihinggadeadline[a]" expression="0"/>
+                <assign variable="status[a]" expression="&quot;&quot;"/>
+                <assign variable="prioritas[a]" expression="0"/>
+                <assign variable="teks[a]" expression="&quot;&quot;"/>
+            </for>
+        </body>
+    </function>
     <function name="output" type="None" variable="">
         <parameters>
             <parameter name="deskripsitugas" type="String" array="True"/>
@@ -198,7 +237,7 @@
             </for>
         </body>
     </function>
-    <function name="updatetaskstatus" type="None" variable="">
+    <function name="Updatetaskstatus" type="None" variable="">
         <parameters>
             <parameter name="kodematkul" type="String" array="True"/>
             <parameter name="status" type="String" array="True"/>

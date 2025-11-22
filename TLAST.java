@@ -38,15 +38,15 @@ public class TLAST {
         output(deskripsitugas, kodematkul, matkul, dosen, deadline, nimnama, status, prioritas, teks, n);
     }
     
-    public static int addtask(String[] deskripsitugas, String[] kodematkul, String[] matkul, String[] dosen) {
+    public static int addtask(String[] deskripsitugas, String[] kodematkul, String[] matkul, String[] dosen, String[] deadline, String[] nimnama, double[] tingkatkesulitan, int[] harihinggadeadline, String[] status, double[] prioritas, String[] teks, int i, int n) {
         deskripsitugas[i] = input.nextLine();
         kodematkul[i] = input.nextLine();
         matkul[i] = input.nextLine();
         dosen[i] = input.nextLine();
         deadline[i] = input.nextLine();
         nimnama[i] = input.nextLine();
-        tingkatkesulitan[i] = input.nextLine();
-        harihinggadeadline[i] = input.nextLine();
+        tingkatkesulitan[i] = Double.parseDouble(input.nextLine());
+        harihinggadeadline[i] = Integer.parseInt(input.nextLine());
         status[i] = input.nextLine();
         prioritas[i] = tingkatkesulitan[i] * 1.0 / harihinggadeadline[i];
         if (prioritas[i] > 3) {
@@ -67,7 +67,7 @@ public class TLAST {
         return n;
     }
     
-    public static String descending(String[] deskripsitugas, String[] kodematkul, String[] matkul, String[] dosen, String[] deadline, String[] nimnama, double[] tingkatkesulitan, int[] harihinggadeadline, String[] status, double[] prioritas, String[] teks, int i, int n) {
+    public static void descending(String[] deskripsitugas, String[] kodematkul, String[] matkul, String[] dosen, String[] deadline, String[] nimnama, double[] tingkatkesulitan, int[] harihinggadeadline, String[] status, double[] prioritas, String[] teks, int i, int n) {
         int h;
         String svdeskripsitugas, svkodematkul, svdosen, svdeadline, svnimnama, svstatus, svmatkul, svteks;
         double svtingkatkesulitan, svprioritas;
@@ -112,8 +112,24 @@ public class TLAST {
                 }
             }
         }
-        
-        return h;
+    }
+    
+    public static void inisialisasi(String[] deskripsitugas, String[] kodematkul, String[] matkul, String[] dosen, String[] deadline, String[] nimnama, double[] tingkatkesulitan, int[] harihinggadeadline, String[] status, double[] prioritas, String[] teks) {
+        int a;
+
+        for (a = 0; a <= 9; a++) {
+            deskripsitugas[a] = "";
+            kodematkul[a] = "";
+            matkul[a] = "";
+            dosen[a] = "";
+            deadline[a] = "";
+            nimnama[a] = "";
+            tingkatkesulitan[a] = 0;
+            harihinggadeadline[a] = 0;
+            status[a] = "";
+            prioritas[a] = 0;
+            teks[a] = "";
+        }
     }
     
     public static void output(String[] deskripsitugas, String[] kodematkul, String[] matkul, String[] dosen, String[] deadline, String[] nimnama, String[] status, double[] prioritas, String[] teks, int n) {
